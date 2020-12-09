@@ -31,14 +31,28 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         aspectRatio: 1,
         backgroundColor: '#666666',
-        borderRadius: 15,
+        borderRadius: 10,
         padding: 20,
-        shadowColor: '#ffffff',
-        shadowOffset: {width: 10, height: 10},
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 1,
         elevation: 10,
-        shadowRadius: 30,
+        shadowRadius: 5,
     },
+    redTile: {
+        backgroundColor: "#cf4125",
+    },
+    yellowTile: {
+        backgroundColor: "yellow",
+    },
+    greenTile: {
+        backgroundColor: "#9DD333",
+    },
+    blueTile: {
+        backgroundColor: "blue",
+    },
+    purpleTile: {
+        backgroundColor: "purple",
+    }
   });
 
 export default styles;

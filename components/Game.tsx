@@ -1,10 +1,23 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, {useState} from 'react';
+import { View, Text } from 'react-native';
 import Board from './Board';
 
 const Game = () => {
+    const [score, setScore] = useState(0);
+
+    const incrementScore = () => {
+        setScore(score => score + 1);
+    }
+
+    const endGame = () => {
+
+    }
+
     return (
-        <Board />      
+        <View>
+            <Text>Score: {score}</Text>
+            <Board incrementScore={incrementScore} />   
+        </View> 
     );
   };
   
