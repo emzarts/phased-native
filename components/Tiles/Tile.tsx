@@ -9,10 +9,8 @@ const Tile = ({...props}) => {
     );
   };
 
-
 Tile.propTypes = {
     onPress: PropTypes.func
 }
 
-  
-  export default Tile;
+export default Tile;
