@@ -24,12 +24,12 @@ const Board = ({...props}) => {
     
     const initializeBoard = () => {  
         let tileData = board.map((row, i) => {
-            let dataRows = row.map((key, j) => {
-                if (key === TileColors.GREEN) return <GreenTile onPress={props.incrementScore}></GreenTile>
-                if (key === TileColors.RED) return <RedTile onPress={props.endGame}></RedTile>
-                return <Tile onPress={() => {}}><Text>{key}</Text></Tile>
+            let dataRows = row.map((tileColor, j) => {
+                if (tileColor === TileColors.GREEN) return <GreenTile key={j} onPress={props.incrementScore}></GreenTile>
+                if (tileColor === TileColors.RED) return <RedTile key={j} onPress={props.endGame}></RedTile>
+                return <Tile key={j} onPress={() => {}}><Text>{tileColor}</Text></Tile>
             });
-            return <View style={styles.boardRow}>{dataRows}</View>;
+            return <View key={i} style={styles.boardRow}>{dataRows}</View>;
         });
         return tileData;
     }
@@ -66,7 +66,6 @@ const Board = ({...props}) => {
                 return dataRows;
             })
         );
-        console.log("REEE")
     }
 
     useEffect(() => {
