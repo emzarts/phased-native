@@ -5,7 +5,7 @@ import styles from '../../styles';
 
 const RedTile = ({...props}) => {
     return (
-        <TouchableOpacity onPress={props.onPress} style={styles.redTile}/>
+        <TouchableOpacity onPress={props.onPress} style={[styles.tile, styles.redTile]}/>
     );
   };
 

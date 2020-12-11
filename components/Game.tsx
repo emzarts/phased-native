@@ -4,20 +4,27 @@ import Board from './Board';
 
 const Game = () => {
     const [score, setScore] = useState(0);
+    const [gameOver, setGameOver] = useState(false);
 
     const incrementScore = () => {
         setScore(score => score + 1);
     }
 
     const endGame = () => {
-
+        setGameOver(true);
     }
 
     return (
         <View>
-            <Text>Score: {score}</Text>
-            <Board incrementScore={incrementScore} />   
-        </View> 
+        {gameOver 
+            ? <Text> REEEEE </Text> 
+            : <View>
+                <Text>Score: {score}</Text>
+                <Board incrementScore={incrementScore} endGame={endGame} />   
+            </View> 
+        }
+        </View>
+        
     );
   };
   
