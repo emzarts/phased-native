@@ -21,17 +21,32 @@ const Board = ({...props}) => {
         [TileColors.BLANK,  TileColors.BLANK,  TileColors.BLANK,  TileColors.BLANK]
       ];
     const [board, setBoard] = useState(keys);
+    const [speed, setSpeed] = useState(900);
     
     const initializeBoard = () => {  
         let tileData = board.map((row, i) => {
             let dataRows = row.map((tileColor, j) => {
-                if (tileColor === TileColors.GREEN) return <GreenTile key={j} onPress={props.incrementScore}></GreenTile>
-                if (tileColor === TileColors.RED) return <RedTile key={j} onPress={props.endGame}></RedTile>
+                if (tileColor === TileColors.GREEN) return <GreenTile reset={resetTile} timer={speed} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
+                if (tileColor === TileColors.RED) return <RedTile reset={resetTile} row={i} col ={j} key={j} onPress={props.endGame}></RedTile>
                 return <Tile key={j} onPress={() => {}}><Text>{tileColor}</Text></Tile>
             });
             return <View key={i} style={styles.boardRow}>{dataRows}</View>;
         });
         return tileData;
+    }
+
+    const resetTile = (tile_row: Number, tile_col: Number) => {
+        setBoard(board => 
+            board.map((row, i) => {
+                let dataRows = row.map((tileColor, j) => {
+                    if (i === tile_row && j === tile_col) {
+                        return TileColors.BLANK
+                    }                    
+                    return tileColor;
+                });
+                return dataRows;
+            })
+        );
     }
 
     const randCoord = () => {
@@ -53,12 +68,9 @@ const Board = ({...props}) => {
     const updateBoard = () => {
         let [greenRow, greenCol] = randomGreenLoc();
 
-        setBoard(
+        setBoard(board => 
             board.map((row, i) => {
                 let dataRows = row.map((tileColor, j) => {
-                    // green tiles disappear after 1 second 
-                    if (tileColor === TileColors.GREEN) return TileColors.BLANK;
-
                     if (i === greenRow && j === greenCol) return TileColors.GREEN;
                     
                     return tileColor;
@@ -69,7 +81,7 @@ const Board = ({...props}) => {
     }
 
     useEffect(() => {
-        const interval = setInterval(() => updateBoard(), 1000);
+        const interval = setInterval(() => updateBoard(), speed);
         return () => {
         clearInterval(interval);
         };
