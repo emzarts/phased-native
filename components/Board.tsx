@@ -22,12 +22,17 @@ const Board = ({...props}) => {
       ];
     const [board, setBoard] = useState(keys);
     const [speed, setSpeed] = useState(900);
+
+    const greenPress = () =>  {
+        props.incrementScore();
+        setSpeed(speed => speed - 3); // TODO less than 0 stuff
+    }
     
     const initializeBoard = () => {  
         let tileData = board.map((row, i) => {
             let dataRows = row.map((tileColor, j) => {
-                if (tileColor === TileColors.GREEN) return <GreenTile reset={resetTile} timer={speed} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
-                if (tileColor === TileColors.RED) return <RedTile reset={resetTile} row={i} col ={j} key={j} onPress={props.endGame}></RedTile>
+                if (tileColor === TileColors.GREEN) return <GreenTile reset={resetTile} timer={speed * 2} row={i} col={j} key={j} onPress={greenPress}></GreenTile>
+                if (tileColor === TileColors.RED) return <RedTile reset={resetTile} timer={speed * 2} row={i} col ={j} key={j} onPress={props.endGame}></RedTile>
                 return <Tile key={j} onPress={() => {}}><Text>{tileColor}</Text></Tile>
             });
             return <View key={i} style={styles.boardRow}>{dataRows}</View>;
@@ -57,21 +62,33 @@ const Board = ({...props}) => {
     }
 
     // Generate a random location for a new green tile
-    const randomGreenLoc = () => {
+    const randomTileLoc = () => {
         let [row, col] = randCoord();
-        while(board[row][col] === TileColors.GREEN) {
+        while(board[row][col] != TileColors.BLANK) {
             [row, col] = randCoord();
         }
         return [row,col];
     }
 
+
+    // randomly select a color based on the probability of it being selected
+    const tileColorProb = () => {
+        const randProb = Math.random();
+        const greenProb = .7;
+        const redProb = .3;
+        if (randProb < redProb) 
+            return TileColors.RED;
+        else 
+            return TileColors.GREEN;
+    }
+
     const updateBoard = () => {
-        let [greenRow, greenCol] = randomGreenLoc();
+        let [tileRow, tileCol] = randomTileLoc();
 
         setBoard(board => 
             board.map((row, i) => {
                 let dataRows = row.map((tileColor, j) => {
-                    if (i === greenRow && j === greenCol) return TileColors.GREEN;
+                    if (i === tileRow && j === tileCol) return tileColorProb();
                     
                     return tileColor;
                 });
