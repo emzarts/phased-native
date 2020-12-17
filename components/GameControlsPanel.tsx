@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, TouchableOpacity } from 'react-native';
-import styles from '../styles';
+import { styles } from '../styles';
 
 const GameControlsPanel = ({...props}) => {
     return (

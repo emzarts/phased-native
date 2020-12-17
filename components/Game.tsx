@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Modal, Alert, TouchableHighlight } from 'react-native';
 import Board from './Board';
+import { modalStyles, styles } from '../styles';
+import GameOverModal from './GameOverModal';
 
 const Game = () => {
     const [score, setScore] = useState(0);
@@ -15,16 +17,16 @@ const Game = () => {
     }
 
     return (
-        <View>
-        {gameOver 
-            ? <Text> REEEEE </Text> 
-            : <View>
-                <Text>Score: {score}</Text>
+      <View>
+        <GameOverModal gameOver={gameOver} setGameOver={setGameOver}/>
+        {/* {gameOver 
+            ? <Text> REEEEE </Text>  :*/}
+            <View>
+                <Text style={styles.scoreText}>Score: {score}</Text>
                 <Board incrementScore={incrementScore} endGame={endGame} />   
             </View> 
-        }
-        </View>
-        
+        {/* } */}
+      </View>  
     );
   };
   

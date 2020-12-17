@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
     appTitle: {
@@ -11,6 +12,11 @@ const styles = StyleSheet.create({
         textShadowRadius: 1,
         textShadowOffset: {width: 5, height: 5},
         color: 'white'
+    },
+    scoreText: {
+        color: 'white',
+        fontSize: 20,
+        textAlign: 'center'
     },
     container: {
         flex: 1,
@@ -54,4 +60,50 @@ const styles = StyleSheet.create({
     }
   });
 
-export default styles;
+  const modalStyles = StyleSheet.create({
+    modalView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    },
+    modalContents: {
+        margin: 20,
+        padding: 20,
+        backgroundColor: "#333333",
+        borderRadius: 10,
+        paddingLeft: 35,
+        paddingRight: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 10
+    },
+    gameOverTitle: {
+        color: '#cf4125',
+        fontSize: 30,
+        fontWeight: "bold",
+        textShadowColor: 'black',
+        textShadowRadius: 1,
+        textShadowOffset: {width: 2, height: 2},
+    },
+    buttons: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+    },
+    modalButton: {
+        padding: 15,
+        margin: 10,
+        backgroundColor: '#666',
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 5
+    }
+  });
+
+export { styles, modalStyles };

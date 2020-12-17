@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View } from 'react-native';
-import styles from '../../styles';
+import { styles } from '../../styles';
 
 const Tile = ({...props}) => {
     return (

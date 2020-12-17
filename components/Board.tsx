@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Tile from './Tiles/Tile';
-import styles from '../styles';
+import { styles } from '../styles';
 import GreenTile from './Tiles/GreenTile';
 import RedTile from './Tiles/RedTile';
 
