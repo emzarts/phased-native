@@ -25,7 +25,7 @@ const Board = ({...props}) => {
 
     const greenPress = () =>  {
         props.incrementScore();
-        setSpeed(speed => speed - 3); // TODO less than 0 stuff
+        setSpeed(speed => speed - 10); // TODO less than 0 stuff
     }
     
     const initializeBoard = () => {  
@@ -106,7 +106,7 @@ const Board = ({...props}) => {
         return () => {
         clearInterval(interval);
         };
-    }, [props.gameOver]);
+    }, [props.gameOver, speed]);
 
     return (
         <View style={styles.board}>
