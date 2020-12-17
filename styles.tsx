@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
     appTitle: {
@@ -10,7 +9,7 @@ const styles = StyleSheet.create({
         margin: 0,
         textShadowColor: 'black',
         textShadowRadius: 1,
-        textShadowOffset: {width: 5, height: 5},
+        textShadowOffset: { width: 5, height: 5 },
         color: 'white'
     },
     scoreText: {
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#666666',
         borderRadius: 10,
         padding: 20,
-        shadowOffset: {width: 1, height: 1},
+        shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 1,
         elevation: 5,
         shadowRadius: 5,
@@ -58,9 +57,9 @@ const styles = StyleSheet.create({
     purpleTile: {
         backgroundColor: "purple",
     }
-  });
+});
 
-  const modalStyles = StyleSheet.create({
+const modalStyles = StyleSheet.create({
     modalView: {
         flex: 1,
         justifyContent: "center",
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
         paddingRight: 35,
         alignItems: "center",
         shadowColor: "#000",
-        shadowOffset: {width: 0, height: 2},
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 5,
         elevation: 10
@@ -87,7 +86,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textShadowColor: 'black',
         textShadowRadius: 1,
-        textShadowOffset: {width: 2, height: 2},
+        textShadowOffset: { width: 2, height: 2 },
     },
     buttons: {
         justifyContent: 'space-around',
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#666',
         borderRadius: 10,
         shadowColor: "#000",
-        shadowOffset: {width: 0, height: 2},
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 5,
         elevation: 5
@@ -108,6 +107,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 16,
     }
-  });
+});
 
 export { styles, modalStyles };
