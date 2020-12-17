@@ -4,6 +4,7 @@ import Board from './Board';
 import { styles } from '../styles';
 import GameOverModal from './GameOverModal';
 import TileColors from './Tiles/TileColors';
+import GameControlsPanel from './GameControlsPanel';
 
 const Game = () => {
   const [score, setScore] = useState(0);
@@ -98,6 +99,7 @@ const Game = () => {
       <View>
         <Text style={styles.scoreText}>Score: {score}</Text>
         <Board board={board} speed={speed} resetTile={resetTile} updateBoard={updateBoard} incrementScore={incrementScore} endGame={endGame} gameOver={gameOver} />
+        <GameControlsPanel setGameOver={setGameOver} score={score} />
       </View>
       {/* } */}
     </View>

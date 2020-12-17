@@ -109,4 +109,17 @@ const modalStyles = StyleSheet.create({
     }
 });
 
-export { styles, modalStyles };
+const gameControlStyles = StyleSheet.create({
+    gameControlView: {
+
+    },
+    controlScore: {
+
+    },
+    controlPause: {
+
+    }
+
+});
+
+export { styles, modalStyles, gameControlStyles };

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Modal, Text, View, TouchableHighlight } from 'react-native';
-import { modalStyles, styles } from '../styles';
+import { modalStyles } from '../styles';
 
 const GameOverModal = ({ ...props }) => {
     return (

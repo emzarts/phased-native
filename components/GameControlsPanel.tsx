@@ -1,19 +1,25 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { styles } from '../styles';
+import { gameControlStyles, modalStyles } from '../styles';
 
 const GameControlsPanel = ({...props}) => {
     return (
-            <View style={styles.gameControlPanel}>
-                <Text style={styles.panelScore}>{props.score}</Text>
-                <TouchableOpacity style={styles.panelPause}><Text>Pause</Text></TouchableOpacity>
+            <View style={gameControlStyles.gameControlView}>
+                <Text style={gameControlStyles.controlScore}>{props.score}</Text>
+                <TouchableOpacity 
+                    style={[gameControlStyles.controlPause, modalStyles.modalButton]}
+                    onPress={() => props.setGameOver(!props.gameOver)}
+                >
+                    <Text>Pause</Text>
+                </TouchableOpacity>
             </View>
     );
   };
 
 GameControlsPanel.propTypes = {
-    score: PropTypes.number
+    score: PropTypes.number,
+    setGameOver: PropTypes.func
 }
 
 export default GameControlsPanel;
