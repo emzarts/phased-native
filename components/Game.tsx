@@ -16,9 +16,14 @@ const Game = () => {
         setGameOver(true);
     }
 
+    const newGame = () => {
+      setScore(0);
+    }
+
+
     return (
       <View>
-        <GameOverModal gameOver={gameOver} setGameOver={setGameOver} score={score}/>
+        <GameOverModal newGame={newGame} gameOver={gameOver} setGameOver={setGameOver} score={score}/>
         {/* {gameOver 
             ? <Text> REEEEE </Text>  :*/}
             <View>

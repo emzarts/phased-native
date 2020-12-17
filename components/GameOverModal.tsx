@@ -20,6 +20,7 @@ const GameOverModal = ({...props}) => {
                 <TouchableHighlight
                     style={modalStyles.modalButton}
                     onPress={() => {
+                        props.newGame();
                         props.setGameOver(!props.gameOver);
                     }}
                 >
@@ -43,6 +44,7 @@ const GameOverModal = ({...props}) => {
 GameOverModal.propTypes = {
     gameOver: PropTypes.bool,
     setGameOver: PropTypes.func,
+    newGame: PropTypes.func,
     score: PropTypes.number
 }
 
