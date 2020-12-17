@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "recreating an old game that no longer exists. It is a clicker game where you press green tiles to earn points and lose the game if you click a red tile. The game becomes progressively faster. ",
+    "githubUrl": "https://github.com/emzarts/phased-native"
   }
 }

@@ -99,10 +99,14 @@ const Board = ({...props}) => {
 
     useEffect(() => {
         const interval = setInterval(() => updateBoard(), speed);
+
+        if(props.gameOver) {
+            clearInterval(interval)
+        }
         return () => {
         clearInterval(interval);
         };
-    }, []);
+    }, [props.gameOver]);
 
     return (
         <View style={styles.board}>
@@ -113,7 +117,8 @@ const Board = ({...props}) => {
 
 Board.propTypes = {
     incrementScore: PropTypes.func,
-    endGame: PropTypes.func
+    endGame: PropTypes.func,
+    gameOver: PropTypes.bool 
 }
 
 export default Board;

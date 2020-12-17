@@ -23,7 +23,7 @@ const Game = () => {
             ? <Text> REEEEE </Text>  :*/}
             <View>
                 <Text style={styles.scoreText}>Score: {score}</Text>
-                <Board incrementScore={incrementScore} endGame={endGame} />   
+                <Board incrementScore={incrementScore} endGame={endGame} gameOver={gameOver} />   
             </View> 
         {/* } */}
       </View>  
