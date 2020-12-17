@@ -15,6 +15,7 @@ const GameOverModal = ({...props}) => {
         <View style={modalStyles.modalView}>
           <View style={modalStyles.modalContents}>
             <Text style={modalStyles.gameOverTitle}>GAME OVER</Text>
+            <Text style={modalStyles.modalText}>{props.score}</Text>
             <View style={modalStyles.buttons}>
                 <TouchableHighlight
                     style={modalStyles.modalButton}
@@ -22,7 +23,7 @@ const GameOverModal = ({...props}) => {
                         props.setGameOver(!props.gameOver);
                     }}
                 >
-                    <Text>Replay</Text>
+                    <Text style={modalStyles.modalText}>Replay</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     style={modalStyles.modalButton}
@@ -30,7 +31,7 @@ const GameOverModal = ({...props}) => {
                         props.setGameOver(!props.gameOver);
                     }}
                 >
-                    <Text>Menu</Text>
+                    <Text style={modalStyles.modalText}>Menu</Text>
                 </TouchableHighlight>
             </View>
           </View>
@@ -41,7 +42,8 @@ const GameOverModal = ({...props}) => {
 
 GameOverModal.propTypes = {
     gameOver: PropTypes.bool,
-    setGameOver: PropTypes.func
+    setGameOver: PropTypes.func,
+    score: PropTypes.number
 }
 
 export default GameOverModal;

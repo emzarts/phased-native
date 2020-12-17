@@ -18,7 +18,7 @@ const Game = () => {
 
     return (
       <View>
-        <GameOverModal gameOver={gameOver} setGameOver={setGameOver}/>
+        <GameOverModal gameOver={gameOver} setGameOver={setGameOver} score={score}/>
         {/* {gameOver 
             ? <Text> REEEEE </Text>  :*/}
             <View>

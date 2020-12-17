@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         padding: 20,
         shadowOffset: {width: 1, height: 1},
         shadowOpacity: 1,
-        elevation: 10,
+        elevation: 5,
         shadowRadius: 5,
     },
     redTile: {
@@ -103,6 +103,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         elevation: 5
+    },
+    modalText: {
+        color: 'white',
+        fontSize: 16,
     }
   });
 
