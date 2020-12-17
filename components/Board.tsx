@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import Tile from './Tiles/Tile';
 import { styles } from '../styles';
 import GreenTile from './Tiles/GreenTile';
 import RedTile from './Tiles/RedTile';
-
-enum TileColors {
-    BLANK,
-    RED,
-    GREEN
-}
+import TileColors from './Tiles/TileColors';
 
 const Board = ({ ...props }) => {
 

@@ -3,13 +3,7 @@ import { View, Text } from 'react-native';
 import Board from './Board';
 import { styles } from '../styles';
 import GameOverModal from './GameOverModal';
-
-
-enum TileColors {
-  BLANK,
-  RED,
-  GREEN
-}
+import TileColors from './Tiles/TileColors';
 
 const Game = () => {
   const [score, setScore] = useState(0);
