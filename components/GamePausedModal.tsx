@@ -4,25 +4,24 @@ import { Text, View, TouchableHighlight } from 'react-native';
 import { modalStyles } from '../styles';
 import GameModal from './GameModal';
 
-const GameOverModal = ({ ...props }) => {
+const GamePausedModal = ({ ...props }) => {
     return (
-        <GameModal visible={props.gameOver}>
-            <Text style={modalStyles.gameOverTitle}>GAME OVER</Text>
+        <GameModal visible={props.gamePaused}>
+            <Text style={modalStyles.gameOverTitle}>PAUSED</Text>
             <Text style={modalStyles.modalText}>{props.score}</Text>
             <View style={modalStyles.buttons}>
                 <TouchableHighlight
                     style={modalStyles.modalButton}
                     onPress={() => {
-                        props.newGame();
-                        props.setGameOver(!props.gameOver);
+                        props.pauseGame();
                     }}
                 >
-                    <Text style={modalStyles.modalText}>Replay</Text>
+                    <Text style={modalStyles.modalText}>Continue</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     style={modalStyles.modalButton}
                     onPress={() => {
-                        props.setGameOver(!props.gameOver);
+                        props.pauseGame();
                     }}
                 >
                     <Text style={modalStyles.modalText}>Menu</Text>
@@ -32,11 +31,10 @@ const GameOverModal = ({ ...props }) => {
     );
 };
 
-GameOverModal.propTypes = {
-    gameOver: PropTypes.bool,
-    setGameOver: PropTypes.func,
-    newGame: PropTypes.func,
+GamePausedModal.propTypes = {
+    gamePaused: PropTypes.bool,
+    pauseGame: PropTypes.func,
     score: PropTypes.number
 }
 
-export default GameOverModal;
+export default GamePausedModal;

@@ -79,8 +79,8 @@ const Board = ({ ...props }) => {
     const initializeBoard = () => {
         let tileData = board.map((row, i) => {
             let dataRows = row.map((tileColor, j) => {
-                if (tileColor === TileColors.GREEN) return <GreenTile gameOver={props.gameOver} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
-                if (tileColor === TileColors.RED) return <RedTile  gameOver={props.gameOver} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.endGame}></RedTile>
+                if (tileColor === TileColors.GREEN) return <GreenTile gameStopped={props.gameStopped} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
+                if (tileColor === TileColors.RED) return <RedTile  gameStopped={props.gameStopped} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.endGame}></RedTile>
                 return <Tile key={j} onPress={() => { }}><Text>{tileColor}</Text></Tile>
             });
             return <View key={i} style={styles.boardRow}>{dataRows}</View>;
@@ -91,13 +91,13 @@ const Board = ({ ...props }) => {
     useEffect(() => {
         const interval = setInterval(() => updateBoard(), props.speed);
 
-        if (props.gameOver) {
+        if (props.gameStopped) {
             clearInterval(interval)
         }
         return () => {
             clearInterval(interval);
         };
-    }, [props.gameOver, props.speed]);
+    }, [props.gameStopped, props.speed]);
 
     return (
         <View style={styles.board}>
@@ -109,7 +109,7 @@ const Board = ({ ...props }) => {
 Board.propTypes = {
     incrementScore: PropTypes.func,
     endGame: PropTypes.func,
-    gameOver: PropTypes.bool,
+    gameStopped: PropTypes.bool,
     speed: PropTypes.number,
 }
 

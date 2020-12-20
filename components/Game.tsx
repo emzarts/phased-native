@@ -4,6 +4,7 @@ import Board from './Board';
 import { styles } from '../styles';
 import GameOverModal from './GameOverModal';
 import GameControlsPanel from './GameControlsPanel';
+import GamePausedModal from './GamePausedModal';
 
 const Game = () => {
   const [score, setScore] = useState(0);
@@ -26,16 +27,17 @@ const Game = () => {
   }
 
   const pauseGame = () => {
-    
+    setPaused(!gamePaused);
   }
 
   return (
     <View>
       <GameOverModal newGame={newGame} gameOver={gameOver} setGameOver={setGameOver} score={score} />
+      <GamePausedModal pauseGame={pauseGame} score={score} gamePaused={gamePaused} />
       <View>
         <Text style={styles.scoreText}>Score: {score}</Text>
-        <Board speed={speed} incrementScore={incrementScore} endGame={endGame} gameOver={gameOver} />
-        <GameControlsPanel setGameOver={setGameOver} score={score} />
+        <Board speed={speed} incrementScore={incrementScore} endGame={endGame} gameStopped={gameOver || gamePaused} />
+        <GameControlsPanel pauseGame={pauseGame} score={score} />
       </View>
     </View>
   );

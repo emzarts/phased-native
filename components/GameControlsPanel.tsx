@@ -9,7 +9,7 @@ const GameControlsPanel = ({...props}) => {
                 <Text style={gameControlStyles.controlScore}>{props.score}</Text>
                 <TouchableOpacity 
                     style={[gameControlStyles.controlPause, modalStyles.modalButton]}
-                    onPress={() => props.setGameOver(!props.gameOver)}
+                    onPress={() => props.pauseGame()}
                 >
                     <Text>Pause</Text>
                 </TouchableOpacity>
@@ -19,7 +19,8 @@ const GameControlsPanel = ({...props}) => {
 
 GameControlsPanel.propTypes = {
     score: PropTypes.number,
-    setGameOver: PropTypes.func
+    gameStopped: PropTypes.bool,
+    pauseGame: PropTypes.func
 }
 
 export default GameControlsPanel;
