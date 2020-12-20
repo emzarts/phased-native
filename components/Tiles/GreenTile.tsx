@@ -6,11 +6,15 @@ import Tile from './Tile';
 
 const GreenTile = ({...props}) => {
     useEffect(() => {
-        const interval = setTimeout(() => props.reset(props.row, props.col), props.timer);
-        return () => {
-        clearInterval(interval);
-        };
-      }, []);
+      const interval = setTimeout(() => props.reset(props.row, props.col), props.timer);
+
+      if (props.gameOver) {
+          clearInterval(interval)
+      }
+      return () => {
+          clearInterval(interval);
+      };
+    }, [props.gameOver]);
     const [clicked, setClicked] = useState(false)
 
     const buttonPressed = () => {
@@ -28,7 +32,8 @@ GreenTile.propTypes = {
     reset: PropTypes.func,
     timer: PropTypes.number,
     row: PropTypes.number,
-    col: PropTypes.number
+    col: PropTypes.number,
+    gameOver: PropTypes.bool
 }
 
   

@@ -79,8 +79,8 @@ const Board = ({ ...props }) => {
     const initializeBoard = () => {
         let tileData = board.map((row, i) => {
             let dataRows = row.map((tileColor, j) => {
-                if (tileColor === TileColors.GREEN) return <GreenTile reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
-                if (tileColor === TileColors.RED) return <RedTile reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.endGame}></RedTile>
+                if (tileColor === TileColors.GREEN) return <GreenTile gameOver={props.gameOver} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.incrementScore}></GreenTile>
+                if (tileColor === TileColors.RED) return <RedTile  gameOver={props.gameOver} reset={resetTile} timer={props.speed * 2} row={i} col={j} key={j} onPress={props.endGame}></RedTile>
                 return <Tile key={j} onPress={() => { }}><Text>{tileColor}</Text></Tile>
             });
             return <View key={i} style={styles.boardRow}>{dataRows}</View>;
@@ -111,8 +111,6 @@ Board.propTypes = {
     endGame: PropTypes.func,
     gameOver: PropTypes.bool,
     speed: PropTypes.number,
-    board: PropTypes.arrayOf(PropTypes.array),
-    updateBoard: PropTypes.func
 }
 
 export default Board;

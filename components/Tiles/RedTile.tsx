@@ -7,10 +7,14 @@ import Tile from './Tile';
 const RedTile = ({...props}) => {
   useEffect(() => {
     const interval = setTimeout(() => props.reset(props.row, props.col), props.timer);
+
+    if (props.gameOver) {
+        clearInterval(interval)
+    }
     return () => {
-    clearInterval(interval);
+        clearInterval(interval);
     };
-  }, []);
+  }, [props.gameOver]);
   const [clicked, setClicked] = useState(false)
 
   const buttonPressed = () => {
@@ -31,7 +35,8 @@ RedTile.propTypes = {
   reset: PropTypes.func,
   timer: PropTypes.number,
   row: PropTypes.number,
-  col: PropTypes.number
+  col: PropTypes.number,
+  gameOver: PropTypes.bool
 }
 
   

@@ -4,6 +4,7 @@ TODO:
 * save high score 
 * possbly lose points for hitting not gray tiles 
 * maybe have a life system
+* try to remember the different game modes
 
 ## The Original Phased 
 

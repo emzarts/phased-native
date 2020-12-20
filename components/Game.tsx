@@ -3,13 +3,12 @@ import { View, Text } from 'react-native';
 import Board from './Board';
 import { styles } from '../styles';
 import GameOverModal from './GameOverModal';
-import TileColors from './Tiles/TileColors';
 import GameControlsPanel from './GameControlsPanel';
 
 const Game = () => {
   const [score, setScore] = useState(0);
   const [speed, setSpeed] = useState(800);
-  const [gamePaused, setGamePaused] = useState(false);
+  const [gamePaused, setPaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
 
@@ -24,6 +23,10 @@ const Game = () => {
 
   const newGame = () => {
     setScore(0);
+  }
+
+  const pauseGame = () => {
+    
   }
 
   return (
