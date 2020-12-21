@@ -17,6 +17,11 @@ const Board = ({ ...props }) => {
       ];
     const [board, setBoard] = useState(keys);
 
+    // whent the game is restarted, reset the board
+    useEffect(() => {   
+      setBoard(keys);
+    }, [props.restart]);
+
     const resetTile = (tile_row: Number, tile_col: Number) => {
         setBoard(board =>
           board.map((row, i) => {
@@ -111,6 +116,7 @@ Board.propTypes = {
     endGame: PropTypes.func,
     gameStopped: PropTypes.bool,
     speed: PropTypes.number,
+    restart: PropTypes.bool
 }
 
 export default Board;

@@ -11,6 +11,7 @@ const Game = () => {
   const [speed, setSpeed] = useState(800);
   const [gamePaused, setPaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [restartGame, setRestart] = useState(false);
 
 
   const incrementScore = () => {
@@ -24,6 +25,7 @@ const Game = () => {
 
   const newGame = () => {
     setScore(0);
+    setRestart(!restartGame);
   }
 
   const pauseGame = () => {
@@ -36,7 +38,7 @@ const Game = () => {
       <GamePausedModal pauseGame={pauseGame} score={score} gamePaused={gamePaused} />
       <View>
         <Text style={styles.scoreText}>Score: {score}</Text>
-        <Board speed={speed} incrementScore={incrementScore} endGame={endGame} gameStopped={gameOver || gamePaused} />
+        <Board speed={speed} incrementScore={incrementScore} endGame={endGame} restart={restartGame} gameStopped={gameOver || gamePaused} />
         <GameControlsPanel pauseGame={pauseGame} score={score} />
       </View>
     </View>
