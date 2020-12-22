@@ -33,14 +33,15 @@ const Game = () => {
   }
 
   return (
-    <View>
+    <View style={styles.gameContainer}>
       <GameOverModal newGame={newGame} gameOver={gameOver} setGameOver={setGameOver} score={score} />
       <GamePausedModal pauseGame={pauseGame} score={score} gamePaused={gamePaused} />
-      <View>
+      <View style={styles.gameHeader}>
+        <Text style={styles.appTitle}>PHASED</Text>
         <Text style={styles.scoreText}>Score: {score}</Text>
-        <Board speed={speed} incrementScore={incrementScore} endGame={endGame} restart={restartGame} gameStopped={gameOver || gamePaused} />
-        <GameControlsPanel pauseGame={pauseGame} score={score} />
       </View>
+      <Board speed={speed} incrementScore={incrementScore} endGame={endGame} restart={restartGame} gameStopped={gameOver || gamePaused} />
+      <GameControlsPanel pauseGame={pauseGame} score={score} />
     </View>
   );
 };

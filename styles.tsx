@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
 const styles = StyleSheet.create({
     appTitle: {
@@ -18,13 +18,24 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     container: {
-        flex: 1,
+        width: '100%',
+        height: '100%',
         backgroundColor: '#333333',
-        alignItems: 'stretch',
-        justifyContent: 'center',
     },
     board: {
-        padding: 5,
+        padding: 5
+    },
+    gameContainer: {
+        height: '100%',
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'stretch',
+    },
+    gameHeader: {
+        padding: 10,
+        marginTop: StatusBar.currentHeight,
+        justifyContent: 'center',
+        alignItems:'center'
     },
     boardRow: {
         justifyContent: 'space-around',
@@ -111,12 +122,22 @@ const modalStyles = StyleSheet.create({
 
 const gameControlStyles = StyleSheet.create({
     gameControlView: {
-
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: '#222'
+    },
+    gameScore: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 2
     },
     controlScore: {
-
+        color: 'white',
+        fontSize: 20,
     },
     controlPause: {
+        color: 'white',
+        fontSize: 20,
 
     }
 

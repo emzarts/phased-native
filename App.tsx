@@ -10,7 +10,6 @@ export default function App() {
   return (
     // <NavigationContainer>
       <View style={styles.container}>
-        <Text style={styles.appTitle}>PHASED</Text>
         <StatusBar style="auto" />
         <Game />
       </View>

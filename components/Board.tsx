@@ -41,7 +41,7 @@ const Board = ({ ...props }) => {
       const tileColorProb = () => {
         const randProb = Math.random();
         const greenProb = .7;
-        const redProb = .3;
+        const redProb = .2;
         if (randProb < redProb)
           return TileColors.RED;
         else

@@ -6,12 +6,14 @@ import { gameControlStyles, modalStyles } from '../styles';
 const GameControlsPanel = ({...props}) => {
     return (
             <View style={gameControlStyles.gameControlView}>
-                <Text style={gameControlStyles.controlScore}>{props.score}</Text>
+                <View style={gameControlStyles.gameScore}>
+                    <Text style={gameControlStyles.controlScore}>{props.score}</Text>
+                </View>
                 <TouchableOpacity 
-                    style={[gameControlStyles.controlPause, modalStyles.modalButton]}
+                    style={modalStyles.modalButton}
                     onPress={() => props.pauseGame()}
                 >
-                    <Text>Pause</Text>
+                    <Text style={modalStyles.modalText}>Pause</Text>
                 </TouchableOpacity>
             </View>
     );
