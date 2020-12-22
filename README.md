@@ -7,7 +7,7 @@ TODO:
     * make the home screen look better
 * https://github.com/styled-components/styled-components-website
     * next.js
-
+* https://medium.com/@mehrankhandev/ultimate-guide-to-use-custom-fonts-in-react-native-77fcdf859cf4
 * https://designmodo.com/3d-css3-button/
 ------
 Later TODO: 

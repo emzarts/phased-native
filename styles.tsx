@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         textShadowColor: 'black',
         textShadowRadius: 1,
         textShadowOffset: { width: 5, height: 5 },
-        color: 'white'
+        color: 'white',
+        fontFamily: 'BigBoy',
     },
     scoreText: {
         color: 'white',
@@ -145,29 +146,31 @@ const gameControlStyles = StyleSheet.create({
         backgroundColor: '#333',
         padding: 5,
         borderColor: '#111',
-        borderTopWidth: 3
+        borderTopWidth: 3,
     },
     gameScore: {
         marginLeft: 20,
         marginRight: 20,
         marginTop: 10,
         marginBottom: 10,
+        paddingRight: 20,
         borderColor: "#111",
         borderWidth: 2,
         borderRadius: 9,
         backgroundColor: '#222',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         flex: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 5,
-        elevation: 5
+        elevation: 5,
+        textAlign: 'right'
     },
     controlScore: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 40,
     },
     controlPause: {
         color: 'white',
