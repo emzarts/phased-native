@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { gameControlStyles, modalStyles } from '../styles';
+import GradientButton from './GradientButton';
 
 const GameControlsPanel = ({...props}) => {
     return (
@@ -9,12 +10,7 @@ const GameControlsPanel = ({...props}) => {
                 <View style={gameControlStyles.gameScore}>
                     <Text style={gameControlStyles.controlScore}>{props.score}</Text>
                 </View>
-                <TouchableOpacity 
-                    style={modalStyles.modalButton}
-                    onPress={() => props.pauseGame()}
-                >
-                    <Text style={modalStyles.modalText}>Pause</Text>
-                </TouchableOpacity>
+                <GradientButton onClick={props.pauseGame} text={"Pause"} />
             </View>
     );
   };

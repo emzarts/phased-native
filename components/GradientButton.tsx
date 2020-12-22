@@ -1,18 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { modalStyles } from '../styles';
 
 const GradientButton = ({ ...props }) => {
     return (
-        <TouchableHighlight
+        <TouchableOpacity
             style={modalStyles.modalButton}
             onPress={() => {
                 props.onClick();
             }}
         >
-            <Text style={modalStyles.modalText}>{props.text}</Text>
-        </TouchableHighlight>
+
+            <LinearGradient
+                colors={['#2d2d2d', 'transparent']}
+                start={[.6, 0]}
+                end={[.5, 1]}
+                style={modalStyles.buttonGradient}
+            >
+                <Text style={modalStyles.modalText}>{props.text}</Text>
+            </LinearGradient>
+        </TouchableOpacity>
     );
 };
 

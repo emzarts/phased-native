@@ -94,6 +94,8 @@ const modalStyles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#222",
         borderRadius: 10,
+        borderColor: '#111',
+        borderWidth: 3,
         paddingLeft: 35,
         paddingRight: 35,
         alignItems: "center",
@@ -115,11 +117,16 @@ const modalStyles = StyleSheet.create({
         justifyContent: 'space-around',
         flexDirection: 'row',
     },
+    buttonGradient: {
+         padding: 15,
+         borderRadius: 10
+    },
     modalButton: {
-        padding: 15,
         margin: 10,
-        backgroundColor: '#2d2d2d',
+        backgroundColor: '#333',
         borderRadius: 10,
+        borderColor: '#111',
+        borderWidth: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
