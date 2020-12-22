@@ -18,10 +18,9 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     container: {
-        paddingTop: StatusBar.currentHeight,
         width: '100%',
         height: '100%',
-        backgroundColor: '#333333',
+        backgroundColor: '#222',
     },
     board: {
         padding: 5
@@ -33,9 +32,13 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
     },
     gameHeader: {
+        paddingTop: StatusBar.currentHeight,
         padding: 10,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor: '#333',
+        borderColor: '#111',
+        borderBottomWidth: 3
     },
     boardRow: {
         justifyContent: 'space-around',
@@ -50,13 +53,13 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     tile: {
-        margin: 8,
+        margin: 5,
         flexGrow: 1,
         aspectRatio: 1,
-        backgroundColor: '#666666',
+        backgroundColor: '#333',
         borderRadius: 10,
-        borderColor: '#222',
-        borderWidth: 1,
+        borderColor: '#111',
+        borderWidth: 3,
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 1,
         elevation: 5,
@@ -133,7 +136,9 @@ const gameControlStyles = StyleSheet.create({
     gameControlView: {
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#222'
+        backgroundColor: '#333',
+        borderColor: '#111',
+        borderTopWidth: 3
     },
     gameScore: {
         justifyContent: 'center',

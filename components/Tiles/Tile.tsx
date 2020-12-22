@@ -8,7 +8,9 @@ const Tile = ({ ...props }) => {
   return (
     <TouchableOpacity onPress={props.onPress} style={styles.tile}>
       <LinearGradient
-        colors={['#707070', '#666666', '#5C5C5C', '#525252']}
+        colors={['#2d2d2d', 'transparent']}
+        start={[.6,0]}
+        end={[.5,1]}
         style={styles.gradient}
       />
     </TouchableOpacity>
