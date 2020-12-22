@@ -4,7 +4,7 @@ TODO:
     * make the buttons look like buttons
     * get dat nice font https://docs.expo.io/versions/v40.0.0/sdk/font/
     * make the score counter look like an analog clock 
-
+    * make the home screen look better
 * https://github.com/styled-components/styled-components-website
     * next.js
 

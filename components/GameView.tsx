@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Board from './Board';
 import { styles } from '../styles';
 import GameOverModal from './GameOverModal';

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View, TouchableHighlight } from 'react-native';
 import { modalStyles } from '../styles';
 import GameModal from './GameModal';
+import GradientButton from './GradientButton';
 
 const GamePausedModal = ({ ...props }) => {
     return (
@@ -10,22 +11,8 @@ const GamePausedModal = ({ ...props }) => {
             <Text style={modalStyles.gameOverTitle}>PAUSED</Text>
             <Text style={modalStyles.modalText}>{props.score}</Text>
             <View style={modalStyles.buttons}>
-                <TouchableHighlight
-                    style={modalStyles.modalButton}
-                    onPress={() => {
-                        props.pauseGame();
-                    }}
-                >
-                    <Text style={modalStyles.modalText}>Continue</Text>
-                </TouchableHighlight>
-                <TouchableHighlight
-                    style={modalStyles.modalButton}
-                    onPress={() => {
-                        props.goHome();
-                    }}
-                >
-                    <Text style={modalStyles.modalText}>Home</Text>
-                </TouchableHighlight>
+                <GradientButton onClick={props.pauseGame} text={"Continue"} />
+                <GradientButton onClick={props.goHome} text={"Home"} />
             </View>
         </GameModal>
     );

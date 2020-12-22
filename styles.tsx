@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 1,
-        elevation: 5,
+        elevation: 4,
         shadowRadius: 5,
     },
     redTile: {
@@ -87,12 +87,12 @@ const modalStyles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     modalContents: {
         margin: 20,
         padding: 20,
-        backgroundColor: "#333333",
+        backgroundColor: "#222",
         borderRadius: 10,
         paddingLeft: 35,
         paddingRight: 35,
@@ -118,7 +118,7 @@ const modalStyles = StyleSheet.create({
     modalButton: {
         padding: 15,
         margin: 10,
-        backgroundColor: '#666',
+        backgroundColor: '#2d2d2d',
         borderRadius: 10,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
