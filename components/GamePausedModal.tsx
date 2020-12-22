@@ -21,10 +21,10 @@ const GamePausedModal = ({ ...props }) => {
                 <TouchableHighlight
                     style={modalStyles.modalButton}
                     onPress={() => {
-                        props.pauseGame();
+                        props.goHome();
                     }}
                 >
-                    <Text style={modalStyles.modalText}>Menu</Text>
+                    <Text style={modalStyles.modalText}>Home</Text>
                 </TouchableHighlight>
             </View>
         </GameModal>
@@ -32,6 +32,7 @@ const GamePausedModal = ({ ...props }) => {
 };
 
 GamePausedModal.propTypes = {
+    goHome: PropTypes.func,
     gamePaused: PropTypes.bool,
     pauseGame: PropTypes.func,
     score: PropTypes.number

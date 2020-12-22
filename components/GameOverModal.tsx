@@ -22,10 +22,10 @@ const GameOverModal = ({ ...props }) => {
                 <TouchableHighlight
                     style={modalStyles.modalButton}
                     onPress={() => {
-                        props.setGameOver(!props.gameOver);
+                        props.goHome();
                     }}
                 >
-                    <Text style={modalStyles.modalText}>Menu</Text>
+                    <Text style={modalStyles.modalText}>Home</Text>
                 </TouchableHighlight>
             </View>
         </GameModal>
@@ -33,6 +33,7 @@ const GameOverModal = ({ ...props }) => {
 };
 
 GameOverModal.propTypes = {
+    goHome: PropTypes.func,
     gameOver: PropTypes.bool,
     setGameOver: PropTypes.func,
     newGame: PropTypes.func,

@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     container: {
+        paddingTop: StatusBar.currentHeight,
         width: '100%',
         height: '100%',
         backgroundColor: '#333333',
@@ -33,7 +34,6 @@ const styles = StyleSheet.create({
     },
     gameHeader: {
         padding: 10,
-        marginTop: StatusBar.currentHeight,
         justifyContent: 'center',
         alignItems:'center'
     },

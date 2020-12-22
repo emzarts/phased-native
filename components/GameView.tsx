@@ -6,13 +6,21 @@ import GameOverModal from './GameOverModal';
 import GameControlsPanel from './GameControlsPanel';
 import GamePausedModal from './GamePausedModal';
 
-const Game = () => {
+const GameView = ({ ...props }) => {
   const [score, setScore] = useState(0);
   const [speed, setSpeed] = useState(800);
   const [gamePaused, setPaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [restartGame, setRestart] = useState(false);
 
+  const goHome = () => {
+    props.navigation.navigate('Home');
+    newGame();
+
+    // reset the modals so they don't show up on the new page
+    setPaused(false);
+    setGameOver(false);
+  }
 
   const incrementScore = () => {
     setSpeed(speed => speed - 10); // TODO less than 0 stuff
@@ -33,9 +41,9 @@ const Game = () => {
   }
 
   return (
-    <View style={styles.gameContainer}>
-      <GameOverModal newGame={newGame} gameOver={gameOver} setGameOver={setGameOver} score={score} />
-      <GamePausedModal pauseGame={pauseGame} score={score} gamePaused={gamePaused} />
+    <View style={[styles.gameContainer, styles.container]}>
+      <GameOverModal goHome={goHome} newGame={newGame} gameOver={gameOver} setGameOver={setGameOver} score={score} />
+      <GamePausedModal goHome={goHome} pauseGame={pauseGame} score={score} gamePaused={gamePaused} />
       <View style={styles.gameHeader}>
         <Text style={styles.appTitle}>PHASED</Text>
         <Text style={styles.scoreText}>Score: {score}</Text>
@@ -46,4 +54,4 @@ const Game = () => {
   );
 };
 
-export default Game;
+export default GameView;
