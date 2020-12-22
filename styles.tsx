@@ -119,12 +119,12 @@ const modalStyles = StyleSheet.create({
     },
     buttonGradient: {
          padding: 15,
-         borderRadius: 10
+         borderRadius: 6
     },
     modalButton: {
         margin: 10,
         backgroundColor: '#333',
-        borderRadius: 10,
+        borderRadius: 6,
         borderColor: '#111',
         borderWidth: 2,
         shadowColor: "#000",
@@ -142,15 +142,28 @@ const modalStyles = StyleSheet.create({
 const gameControlStyles = StyleSheet.create({
     gameControlView: {
         flexDirection: 'row',
-        justifyContent: 'center',
         backgroundColor: '#333',
+        padding: 5,
         borderColor: '#111',
         borderTopWidth: 3
     },
     gameScore: {
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 10,
+        marginBottom: 10,
+        borderColor: "#111",
+        borderWidth: 2,
+        borderRadius: 9,
+        backgroundColor: '#222',
         justifyContent: 'center',
         alignItems: 'center',
-        flex: 2
+        flex: 2,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 5
     },
     controlScore: {
         color: 'white',
@@ -159,7 +172,6 @@ const gameControlStyles = StyleSheet.create({
     controlPause: {
         color: 'white',
         fontSize: 20,
-
     }
 
 });
