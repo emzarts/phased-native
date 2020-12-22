@@ -41,13 +41,22 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         flexDirection: 'row',
     },
+    tileTransparent: {
+        backgroundColor: 'transparent'
+    },
+    gradient: {
+        width: '100%',
+        height: '100%',
+        borderRadius: 10
+    },
     tile: {
         margin: 8,
         flexGrow: 1,
         aspectRatio: 1,
         backgroundColor: '#666666',
         borderRadius: 10,
-        padding: 20,
+        borderColor: '#222',
+        borderWidth: 1,
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 1,
         elevation: 5,

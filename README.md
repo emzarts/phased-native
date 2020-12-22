@@ -1,8 +1,9 @@
 TODO: 
-* create the home screen using React Navigation
-    * create different screens https://reactnative.dev/docs/navigation
 * save high score on device
 * make it pretty
+    * make the buttons look like buttons
+    * get dat nice font https://docs.expo.io/versions/v40.0.0/sdk/font/
+    * make the score counter look like an analog clock 
 ------
 Later TODO: 
 * different color tiles

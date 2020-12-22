@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity, View } from 'react-native';
 import { styles } from '../../styles';
 import Tile from './Tile';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const RedTile = ({...props}) => {
   useEffect(() => {
@@ -23,7 +24,14 @@ const RedTile = ({...props}) => {
   }
 
   if (clicked) return <Tile onPress={()=>{}} /> 
-  else return <TouchableOpacity onPress={buttonPressed} style={[styles.tile, styles.redTile]}/>
+  else return (
+    <TouchableOpacity onPress={buttonPressed} style={[styles.tile, styles.redTile]}>
+      <LinearGradient
+        colors={['#D94B2F', '#cf4125', '#C5371B', '#BB2D11']}
+        style={styles.gradient}
+      />
+    </TouchableOpacity>
+  )
 
 };
 
