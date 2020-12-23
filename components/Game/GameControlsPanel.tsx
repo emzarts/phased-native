@@ -9,7 +9,7 @@ const GameControlsPanel = ({ ...props }) => {
     return (
         <View style={gameControlStyles.gameControlView}>
             <View style={gameControlStyles.gameScore}>
-                <DigitalText text={props.score} />
+                <DigitalText text={props.score} styles={gameControlStyles.controlScore} />
             </View>
             <GradientButton onClick={props.pauseGame} text={"Pause"} />
         </View>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
 import { Text } from 'react-native';
-import { gameControlStyles } from '../styles';
 import PropTypes from 'prop-types';
 
 const DigitalText = ({...props}) => {
@@ -10,12 +9,13 @@ const DigitalText = ({...props}) => {
     });
     if (!fontsLoaded) return null;
     return (
-        <Text style={[{ fontFamily: 'DS' }, gameControlStyles.controlScore]}>{props.text}</Text>
+        <Text style={[{ fontFamily: 'DS' }, props.styles]}>{props.text}</Text>
     )
 }
 
 DigitalText.propTypes = {
     text: PropTypes.number,
+    styles: PropTypes.object
 }
 
 export default DigitalText;

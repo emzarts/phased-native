@@ -7,15 +7,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         padding: 0,
         margin: 0,
-        textShadowColor: 'black',
+        textShadowColor: 'rgba(1,1,1,.9)',
         textShadowRadius: 1,
         textShadowOffset: { width: 5, height: 5 },
         color: 'white',
-    },
-    scoreText: {
-        color: 'white',
-        fontSize: 20,
-        textAlign: 'center'
     },
     container: {
         width: '100%',
@@ -177,6 +172,9 @@ const gameControlStyles = StyleSheet.create({
     controlScore: {
         color: 'white',
         fontSize: 40,
+        textShadowColor: 'rgba(1,1,1,.2)',
+        textShadowRadius: 2,
+        textShadowOffset: { width: 3, height: 3 }
     },
     controlPause: {
         color: 'white',
@@ -185,4 +183,16 @@ const gameControlStyles = StyleSheet.create({
 
 });
 
-export { styles, modalStyles, gameControlStyles };
+const homeStyles = StyleSheet.create({
+    homeView: {
+        width: '100%',
+        height: '100%',
+        padding: 10,
+    },
+    homeTextRegular: {
+        color: 'white',
+        fontSize: 17
+    }
+})
+
+export { styles, modalStyles, gameControlStyles, homeStyles };

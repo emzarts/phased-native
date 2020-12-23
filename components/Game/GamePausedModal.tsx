@@ -12,7 +12,7 @@ const GamePausedModal = ({ ...props }) => {
             <View style={[modalStyles.modalSegment, modalStyles.modalTitleSegment]}>
                 <Text style={modalStyles.modalTitle}>PAUSED</Text>
             </View>
-            <DigitalText text={props.score} />
+            <DigitalText text={props.score} styles={gameControlStyles.controlScore} />
             <View style={[modalStyles.modalSegment, modalStyles.modalButtonSegment]}>
                 <GradientButton onClick={props.pauseGame} text={"Continue"} />
                 <GradientButton onClick={props.goHome} text={"Home"} />

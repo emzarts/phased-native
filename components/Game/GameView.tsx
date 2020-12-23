@@ -10,7 +10,7 @@ import {storeScore} from '../Data/HighScore';
 
 const GameView = ({ ...props }) => {
   const [score, setScore] = useState(0);
-  const [speed, setSpeed] = useState(700);
+  const [speed, setSpeed] = useState(650);
   const [gamePaused, setPaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [restartGame, setRestart] = useState(false);

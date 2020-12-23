@@ -1,12 +1,11 @@
 TODO: 
-* save high score on device
 * make it pretty
-    * make the buttons look like buttons
-    * get dat nice font https://docs.expo.io/versions/v40.0.0/sdk/font/
-    * make the score counter look like an analog clock 
     * make the home screen look better
+        * make the home buttons different colors
+    * add an instructions button 
 * https://github.com/styled-components/styled-components-website
     * next.js
+* find a digital font that I can actually use
 * https://medium.com/@mehrankhandev/ultimate-guide-to-use-custom-fonts-in-react-native-77fcdf859cf4
 * https://designmodo.com/3d-css3-button/
 ------
