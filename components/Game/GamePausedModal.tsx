@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, TouchableHighlight } from 'react-native';
-import { modalStyles } from '../styles';
+import { Text, View } from 'react-native';
+import { modalStyles, gameControlStyles } from '../../styles';
 import GameModal from './GameModal';
-import GradientButton from './GradientButton';
+import GradientButton from '../GradientButton';
+import DigitalText from '../DigitalText';
 
 const GamePausedModal = ({ ...props }) => {
     return (
         <GameModal visible={props.gamePaused}>
-            <Text style={modalStyles.gameOverTitle}>PAUSED</Text>
-            <Text style={modalStyles.modalText}>{props.score}</Text>
-            <View style={modalStyles.buttons}>
+            <View style={[modalStyles.modalSegment, modalStyles.modalTitleSegment]}>
+                <Text style={modalStyles.modalTitle}>PAUSED</Text>
+            </View>
+            <DigitalText text={props.score} />
+            <View style={[modalStyles.modalSegment, modalStyles.modalButtonSegment]}>
                 <GradientButton onClick={props.pauseGame} text={"Continue"} />
                 <GradientButton onClick={props.goHome} text={"Home"} />
             </View>

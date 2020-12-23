@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
         textShadowRadius: 1,
         textShadowOffset: { width: 5, height: 5 },
         color: 'white',
-        fontFamily: 'BigBoy',
     },
     scoreText: {
         color: 'white',
@@ -92,13 +91,11 @@ const modalStyles = StyleSheet.create({
     },
     modalContents: {
         margin: 20,
-        padding: 20,
-        backgroundColor: "#222",
+        maxWidth: '90%',
+        backgroundColor: "#333",
         borderRadius: 10,
         borderColor: '#111',
         borderWidth: 3,
-        paddingLeft: 35,
-        paddingRight: 35,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
@@ -106,17 +103,27 @@ const modalStyles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 10
     },
-    gameOverTitle: {
+    modalTitle: {
         color: '#cf4125',
         fontSize: 30,
+        textAlign: 'center',
         fontWeight: "bold",
         textShadowColor: 'black',
         textShadowRadius: 1,
         textShadowOffset: { width: 2, height: 2 },
     },
-    buttons: {
-        justifyContent: 'space-around',
+    modalSegment: {
+        justifyContent: 'space-evenly',
         flexDirection: 'row',
+        width: '100%',
+        borderColor: '#111'
+    },
+    modalTitleSegment: {
+        padding: 10,
+        borderBottomWidth: 2
+    },
+    modalButtonSegment: {
+        borderTopWidth: 2
     },
     buttonGradient: {
          padding: 15,
@@ -166,7 +173,6 @@ const gameControlStyles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         elevation: 5,
-        textAlign: 'right'
     },
     controlScore: {
         color: 'white',

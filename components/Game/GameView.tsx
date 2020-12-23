@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import Board from './Board';
-import { styles } from '../styles';
+import Board from '../Board';
+import { styles } from '../../styles';
 import GameOverModal from './GameOverModal';
 import GameControlsPanel from './GameControlsPanel';
 import GamePausedModal from './GamePausedModal';

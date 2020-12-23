@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
-import { styles, modalStyles } from '../styles';
-import GameHeader from './GameHeader';
+import { View, Text } from 'react-native';
+import { styles } from '../styles';
+import GameHeader from './Game/GameHeader';
 import GradientButton from './GradientButton';
 
 const Game = ({ ...props }) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
-import { gameControlStyles } from '../styles';
-import GradientButton from './GradientButton';
-import DigitalText from './DigitalText';
+import { gameControlStyles } from '../../styles';
+import GradientButton from '../GradientButton';
+import DigitalText from '../DigitalText';
 
 const GameControlsPanel = ({ ...props }) => {
     return (

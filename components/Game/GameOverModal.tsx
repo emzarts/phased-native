@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, TouchableHighlight } from 'react-native';
-import { modalStyles } from '../styles';
+import { modalStyles } from '../../styles';
 import GameModal from './GameModal';
-import GradientButton from './GradientButton';
+import GradientButton from '../GradientButton';
+import DigitalText from '../DigitalText';
 
 const GameOverModal = ({ ...props }) => {
     const newGame = () => {
@@ -13,9 +14,11 @@ const GameOverModal = ({ ...props }) => {
 
     return (
         <GameModal visible={props.gameOver}>
-            <Text style={modalStyles.gameOverTitle}>GAME OVER</Text>
-            <Text style={modalStyles.modalText}>{props.score}</Text>
-            <View style={modalStyles.buttons}>
+            <View style={[modalStyles.modalSegment, modalStyles.modalTitleSegment]}>
+                <Text style={modalStyles.modalTitle}>GAME OVER</Text>
+            </View>
+            <DigitalText text={props.score} />
+            <View style={[modalStyles.modalSegment, modalStyles.modalButtonSegment]}>
                 <GradientButton onClick={newGame} text={"Replay"} /> 
                 <GradientButton onClick={props.goHome} text={"Home"} />
            </View>
