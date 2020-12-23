@@ -6,6 +6,7 @@ import GameOverModal from './GameOverModal';
 import GameControlsPanel from './GameControlsPanel';
 import GamePausedModal from './GamePausedModal';
 import GameHeader from './GameHeader';
+import {storeScore} from '../Data/HighScore';
 
 const GameView = ({ ...props }) => {
   const [score, setScore] = useState(0);
@@ -29,6 +30,7 @@ const GameView = ({ ...props }) => {
   }
 
   const endGame = () => {
+    storeScore(score);
     setGameOver(true);
   }
 
