@@ -3,6 +3,7 @@ TODO:
     * make the home screen look better
         * make the home buttons different colors
     * add an instructions button 
+    * make title letters different colors
 * https://github.com/styled-components/styled-components-website
     * next.js
 * find a digital font that I can actually use
@@ -20,7 +21,7 @@ Later TODO:
 * try to remember the different game modes
     * classic
     * faster version
-
+* integrate with the game thingies
 ## The Original Phased 
 
 ![Screenshot of the game over menu for the original Phased app](/assets/images/phased_original.JPG)

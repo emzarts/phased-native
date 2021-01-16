@@ -17,7 +17,7 @@ const GameOverModal = ({ ...props }) => {
             <View style={[modalStyles.modalSegment, modalStyles.modalTitleSegment]}>
                 <Text style={modalStyles.modalTitle}>GAME OVER</Text>
             </View>
-            <DigitalText text={props.score} styls={gameControlStyles.controlScore}/>
+            <DigitalText text={props.score} styles={gameControlStyles.controlScore}/>
             <View style={[modalStyles.modalSegment, modalStyles.modalButtonSegment]}>
                 <GradientButton onClick={newGame} text={"Replay"} /> 
                 <GradientButton onClick={props.goHome} text={"Home"} />

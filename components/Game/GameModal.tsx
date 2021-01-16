@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Alert, Modal, View } from 'react-native';
 import { modalStyles } from '../../styles';
 
-const GameOverModal = ({ ...props }) => {
+const GameModal = ({ ...props }) => {
     return (
         <Modal
             visible={props.visible}
@@ -21,8 +21,8 @@ const GameOverModal = ({ ...props }) => {
     );
 };
 
-GameOverModal.propTypes = {
+GameModal.propTypes = {
     visible: PropTypes.bool
 }
 
-export default GameOverModal;
+export default GameModal;

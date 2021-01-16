@@ -84,6 +84,10 @@ const modalStyles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
+    fullScreenModal: {
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',  
+        flex: 1
+    },
     modalContents: {
         margin: 20,
         maxWidth: '90%',
@@ -192,6 +196,11 @@ const homeStyles = StyleSheet.create({
     homeTextRegular: {
         color: 'white',
         fontSize: 17
+    },
+    homeTextScore:{
+        color: 'white',
+        textAlign:'center',
+        fontSize: 25
     }
 })
 

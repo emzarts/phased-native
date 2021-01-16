@@ -1,6 +1,6 @@
 import React from 'react';
 import GameView from './components/Game/GameView';
-import HomeView from './components/HomeView';
+import HomeView from './components/Home/HomeView';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
