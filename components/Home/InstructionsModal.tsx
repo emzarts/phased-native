@@ -6,7 +6,7 @@ import FullScreenModal from '../FullScreenModal';
 
 const InstructionsModal = ({ ...props }) => {
     return (
-        <FullScreenModal visible={props.visible} closeModal={() => {}}>
+        <FullScreenModal visible={props.visible} closeModal={props.closeModal}>
             <Text style={homeStyles.homeTextRegular}>
             <Text>Instructions:</Text>
                 {"\n"}

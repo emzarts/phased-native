@@ -9,7 +9,7 @@ const FullScreenModal = ({ ...props }) => {
         <Modal
             visible={props.visible}
             onRequestClose={() => {
-                Alert.alert("Modal has been closed.");
+                props.closeModal();
             }}
         >
             <View style={modalStyles.fullScreenModal}>

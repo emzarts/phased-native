@@ -126,7 +126,9 @@ const modalStyles = StyleSheet.create({
     },
     buttonGradient: {
          padding: 15,
-         borderRadius: 6
+         borderRadius: 6,
+         flexDirection: 'row',
+         justifyContent: 'space-between'
     },
     modalButton: {
         margin: 10,

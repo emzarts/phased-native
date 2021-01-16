@@ -17,13 +17,12 @@ const HomeView = ({ ...props }) => {
   })
   return (
     <View style={styles.container}>
-      <InstructionsModal visible={instructionsOpen}>
+      <InstructionsModal visible={instructionsOpen} closeModal={() => setInstructions(false)}/>
         
-      </InstructionsModal>
       <GameHeader />
       <View style={homeStyles.homeView}>
         <Text style={homeStyles.homeTextScore}>RECORD: {highScore} </Text>
-        <GradientButton onClick={() => props.navigation.navigate('Game')} text={"Start Game"} />
+        <GradientButton onClick={() => props.navigation.navigate('Game')} text={"Start Game"} icon="info" />
         <GradientButton onClick={() => setInstructions(true)} text={"Instructions"} />
         <View>
 
